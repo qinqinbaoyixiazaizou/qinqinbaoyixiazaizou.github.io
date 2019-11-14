@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>团队md标准样式 - 养生之道</title>
+<title>Mysql顺序写入 - 养生之道</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="摘要部分文章主要内容 例如:关于团队md的标准样式 作者: IHT BLOG TEAM（自行更改）  目录 tags标签分类 更多…..">
-<meta name="keywords" content="Team_template">
+    <meta name="description" content="摘要部分文章主要内容 例如:Mysql顺序写入 作者: TM  目录 tags标签分类 更多…..">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="团队md标准样式">
-<meta property="og:url" content="http://yoursite.com/2019/05/11/标准样式/index.html">
+<meta property="og:title" content="Mysql顺序写入">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/mysql-connect-myself/index.html">
 <meta property="og:site_name" content="养生之道">
-<meta property="og:description" content="摘要部分文章主要内容 例如:关于团队md的标准样式 作者: IHT BLOG TEAM（自行更改）  目录 tags标签分类 更多…..">
+<meta property="og:description" content="摘要部分文章主要内容 例如:Mysql顺序写入 作者: TM  目录 tags标签分类 更多…..">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-23T04:23:37.566Z">
+<meta property="og:updated_time" content="2019-11-14T06:54:30.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="团队md标准样式">
-<meta name="twitter:description" content="摘要部分文章主要内容 例如:关于团队md的标准样式 作者: IHT BLOG TEAM（自行更改）  目录 tags标签分类 更多…..">
+<meta name="twitter:title" content="Mysql顺序写入">
+<meta name="twitter:description" content="摘要部分文章主要内容 例如:Mysql顺序写入 作者: TM  目录 tags标签分类 更多…..">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="团队md标准样式" height="28">
+                <img src="/images/logo.svg" alt="Mysql顺序写入" height="28">
             
             </a>
         </div>
@@ -145,13 +145,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-11T13:12:24.000Z">2019-05-11</time>
+                <time class="level-item has-text-grey" datetime="2019-11-14T06:00:00.000Z">2019-11-14</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 106 个字)
+                    1 分钟 读完 (大约 171 个字)
                 </span>
                 
                 
@@ -160,13 +160,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                团队md标准样式
+                Mysql顺序写入
             
         </h1>
         <div class="content">
             <h2 id="摘要部分"><a href="#摘要部分" class="headerlink" title="摘要部分"></a>摘要部分</h2><h3 id="文章主要内容"><a href="#文章主要内容" class="headerlink" title="文章主要内容"></a>文章主要内容</h3><ul>
-<li>例如:关于团队md的标准样式</li>
-<li>作者: IHT BLOG TEAM（自行更改）</li>
+<li>例如:Mysql顺序写入</li>
+<li>作者: TM</li>
 </ul>
 <h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
 <li>tags标签分类</li>
@@ -174,11 +174,50 @@
 </ol>
 <a id="more"></a>
 <h3 id="tags标签分类"><a href="#tags标签分类" class="headerlink" title="tags标签分类"></a>tags标签分类</h3><ol>
-<li>Team_template 团队模板类</li>
-<li>Technology 技术文档类</li>
-<li>Competition_information 比赛资料介绍类</li>
+<li>relaxing<br>java代码如下：<br>package start;</li>
 </ol>
-<h3 id="额外部分"><a href="#额外部分" class="headerlink" title="额外部分"></a>额外部分</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;以下部分为主要内容，内容格式自主选择。</span><br><span class="line">但more前面格式必须统一</span><br></pre></td></tr></table></figure>
+<p>import java.sql.DriverManager;<br>import java.sql.ResultSet;<br>import com.mysql.jdbc.Connection;<br>import com.mysql.jdbc.Statement;</p>
+<p>public class  Connect {</p>
+<pre><code>public static void main(String[] args) {
+    int num=1;
+    String url=&quot;jdbc:mysql://localhost:3306/test1&quot;;   
+    String username=&quot;root&quot;;
+    String password=&quot;123456aa&quot;;   
+    String driver=&quot;com.mysql.jdbc.Driver&quot;;
+    Connection conn=null;
+    Statement stmt=null;
+    ResultSet rs=null;
+
+
+    try {
+
+        Class.forName(driver);
+
+        conn=  (Connection) DriverManager.getConnection(url, username, password);
+
+        stmt=(Statement) conn.createStatement();
+
+        stmt.execute(&quot;insert into data values(1,&apos;super one&apos;,123,100,&apos;00:10:10&apos;,1000)&quot;);
+        num++;
+        stmt.execute(&quot;insert into data values(2,&apos;zero one&apos;,456,100,&apos;01:01:01&apos;,10000)&quot;);
+
+        rs=stmt.executeQuery(&quot;select * from data&quot;);
+        while(rs.next()) {
+            System.out.println(rs.getInt(1)+&quot; &quot;+rs.getString(2)+&quot; &quot;+rs.getInt(3)+&quot; &quot;+rs.getInt(4)+&quot; &quot;+rs.getString(5)+&quot; &quot;+rs.getInt(6));
+        }
+
+
+
+
+        rs.close();
+        stmt.close();
+        conn.close();
+        }
+        catch(Exception e)
+        {
+        System.out.println(&quot;Exception:&quot;+e.getMessage());
+    } 
+</code></pre><p>}<br>}</p>
 
         </div>
         
@@ -186,7 +225,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Team-template/">Team_template</a>
+                    <a class="has-link-grey -link" href="/tags/MySQL/">MySQL</a>
                 </div>
             </div>
         </div>
@@ -256,13 +295,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/25/MySQL安装/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">MySQL 安装与配置</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/14/标准样式/">
+                <span class="level-item">Mysql顺序写入</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -311,7 +350,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -331,7 +370,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        1
                     </p>
                 </div>
             </div>
@@ -440,7 +479,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Team-template/" style="font-size: 10px;">Team_template</a>
+        <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a>
     </div>
 </div>
 
@@ -454,6 +493,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/14/mysql-connect-myself/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mysql顺序写入">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T06:00:00.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/mysql-connect-myself/" class="has-link-black-ter is-size-6">Mysql顺序写入</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/14/标准样式/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mysql顺序写入">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T06:00:00.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/标准样式/" class="has-link-black-ter is-size-6">Mysql顺序写入</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -493,25 +570,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/11/标准样式/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="团队md标准样式">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-11T13:12:24.000Z">2019-05-11</time></div>
-                    <a href="/2019/05/11/标准样式/" class="has-link-black-ter is-size-6">团队md标准样式</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -525,9 +583,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/archives/2019/11/">
                 <span class="level-start">
-                    <span class="level-item">九月 2019</span>
+                    <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
@@ -536,12 +594,12 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/05/">
+            <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
-                    <span class="level-item">五月 2019</span>
+                    <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -562,14 +620,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Team-template/">
-                        <span class="tag">Team_template</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -598,6 +649,44 @@
         
         <article class="media">
             
+            <a href="/2019/11/14/mysql-connect-myself/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mysql顺序写入">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T06:00:00.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/mysql-connect-myself/" class="has-link-black-ter is-size-6">Mysql顺序写入</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/14/标准样式/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Mysql顺序写入">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-14T06:00:00.000Z">2019-11-14</time></div>
+                    <a href="/2019/11/14/标准样式/" class="has-link-black-ter is-size-6">Mysql顺序写入</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/09/27/MySQL基础教程/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="MySQL基础教程">
@@ -634,25 +723,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/05/11/标准样式/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="团队md标准样式">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-11T13:12:24.000Z">2019-05-11</time></div>
-                    <a href="/2019/05/11/标准样式/" class="has-link-black-ter is-size-6">团队md标准样式</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -666,9 +736,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/archives/2019/11/">
                 <span class="level-start">
-                    <span class="level-item">九月 2019</span>
+                    <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
@@ -677,12 +747,12 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/05/">
+            <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
-                    <span class="level-item">五月 2019</span>
+                    <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -703,14 +773,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/MySQL/">
                         <span class="tag">MySQL</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Team-template/">
-                        <span class="tag">Team_template</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -731,7 +794,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="团队md标准样式" height="28">
+                    <img src="/images/logo.svg" alt="Mysql顺序写入" height="28">
                 
                 </a>
                 <p class="is-size-7">
