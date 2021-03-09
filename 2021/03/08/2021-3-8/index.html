@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Vue网页框架 - 离谱</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="摘要部分文章主要内容 Vue框架学习 作者: 小明和离谱  目录 概述 声明式渲染和组件化 vue入门 vue调试工具 基础模板语法">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue网页框架">
+<meta property="og:url" content="http://yoursite.com/2021/03/08/2021-3-8/index.html">
+<meta property="og:site_name" content="离谱">
+<meta property="og:description" content="摘要部分文章主要内容 Vue框架学习 作者: 小明和离谱  目录 概述 声明式渲染和组件化 vue入门 vue调试工具 基础模板语法">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2021-03-09T03:18:09.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue网页框架">
+<meta name="twitter:description" content="摘要部分文章主要内容 Vue框架学习 作者: 小明和离谱  目录 概述 声明式渲染和组件化 vue入门 vue调试工具 基础模板语法">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Vue网页框架" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-03-08T15:55:00.000Z">2021-03-08</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    17 分钟 读完 (大约 2555 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Vue网页框架
+            
+        </h1>
+        <div class="content">
+            <h2 id="摘要部分"><a href="#摘要部分" class="headerlink" title="摘要部分"></a>摘要部分</h2><h3 id="文章主要内容"><a href="#文章主要内容" class="headerlink" title="文章主要内容"></a>文章主要内容</h3><ul>
+<li>Vue框架学习</li>
+<li>作者: 小明和离谱</li>
+</ul>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
+<li>概述</li>
+<li>声明式渲染和组件化</li>
+<li>vue入门</li>
+<li>vue调试工具</li>
+<li>基础模板语法</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">☺ ☺ ☺你怎么看这篇文章☺ ☺ ☺</span><br><span class="line">    2369217717@qq.com</span><br></pre></td></tr></table></figure>
+<p> Vue</p>
+<p> 一、初识vue</p>
+<p> 1、概述</p>
+<p>作者：尤雨溪</p>
+<p>官网：<a href="https://cn.vuejs.org" target="_blank" rel="noopener">https://cn.vuejs.org</a></p>
+<p>Vue.js是一套构建用户界面的渐进式框架。</p>
+<ul>
+<li>渐进式：循序渐进，不要求我们一次性学习全部的vue知识点，学多少用多少</li>
+<li>框架：属于半成品应用</li>
+</ul>
+<p><strong>核心</strong>：</p>
+<ul>
+<li>声明式渲染<ul>
+<li>例如，在js中，要使用一个变量要先定义/声明</li>
+</ul>
+</li>
+<li>组件化<ul>
+<li>积木</li>
+<li>砖头</li>
+</ul>
+</li>
+</ul>
+<p><strong>特点</strong>：</p>
+<p><img src="https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/09/4f9e45db623e2c0f0dd1a45e985c36b83825ce6c.png?sign=cead88c04c73c6d314f093b1ef504d42&amp;t=5f50707e" alt="Vue特点"></p>
+<p> 2、声明式渲染和组件化</p>
+<ul>
+<li><strong>声明</strong>式渲染</li>
+</ul>
+<p>Vue.js的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进DOM的系统。</p>
+<ul>
+<li><strong>组件化</strong>应用构建</li>
+</ul>
+<p>组件系统是Vue的另一个重要概念，因为它是一种抽象的允许我们使用<strong>小型、独立</strong>和通常<strong>可复用</strong>的“小积木”构建大型应用。几乎任意类型的应用界面都可以抽象为一个组件树。</p>
+<p><img src="https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/09/279e26e948d53d33a2a05e10e7c29aa736fe80a1.png?sign=9f63925b42a763bb945ad25cda41928f&amp;t=5f5073bf" alt="组件"></p>
+<p> 3、vue入门</p>
+<p>案例：实用vue完成hello world输出。</p>
+<p>步骤：</p>
+<ul>
+<li>创建Html文件并且导入vue.js文件（<a href="https://cdn.jsdelivr.net/npm/vue/dist/vue.js）" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue/dist/vue.js）</a></li>
+<li>创建渲染容器<ul>
+<li>约定俗成，div标签，有一个选择器<code>id=&quot;app&quot;</code></li>
+</ul>
+</li>
+<li>创建vue实例（<code>new Vue()</code>）</li>
+<li>给vue实例传递配置选项<ul>
+<li>el属性：值相对固定，是id选择器的值<code>#app</code></li>
+<li>data属性：值是一个普通的对象，用于定义/声明这次操作需要用的数据</li>
+</ul>
+</li>
+<li>输出数据<ul>
+<li>需要用到特殊的表达式：插值表达式，形式：<code></code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- 2. 定义渲染容器 --&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;str&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 原生的方式 --&gt;</span><br><span class="line">    &lt;!-- &lt;div id=&quot;cnt&quot;&gt;&lt;/div&gt; --&gt;</span><br><span class="line">    &lt;!-- 1. 引入vue.js文件 --&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- 3. 实例化vue --&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el:&apos;#app&apos;,  // 指定vue负责的区域的</span><br><span class="line">            data: &#123;</span><br><span class="line">                // data中就是需要的数据</span><br><span class="line">                str: &apos;hello world&apos;,</span><br><span class="line">                asd: 123,</span><br><span class="line">                //.....</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // document.getElementById(&apos;cnt&apos;).innerHTML = &apos;hello world&apos;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"> 4、vue调试工具</span><br><span class="line"></span><br><span class="line">通过chrome中的谷歌插件商店安装Vue Devtools工具，此工具帮助我们进行vue数据调试所用，一定要安装。Vue工具在谷歌商店的地址是：https://chrome.google.com/webstore?utm_source=chrome-ntp-icon</span><br><span class="line"></span><br><span class="line">&gt; 请注意：打开chrome应用商店，**需要科学上网**才能访问到，至于怎么科学上网请各位自行解决。</span><br><span class="line"></span><br><span class="line">![Vue工具谷歌商店](https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/09/dc840deb63c247fb5b7fac6f162f3fece10832ae.png?sign=180564fbbac92d11b6e89e4e9d8df208&amp;t=5f561a39)</span><br><span class="line"></span><br><span class="line">安装好后打开Chrome的`开发者工具（F12或Ctrl+Shift+I）`即可使用：</span><br><span class="line"></span><br><span class="line">![谷歌浏览器使用Vue工具](https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/09/7ea8955be2b91f4c8530fdf7696fa2f5508b3a35.png?sign=2773c0e615128ca86b96c79bca31eaf4&amp;t=5f561a6a)</span><br><span class="line"></span><br><span class="line">**补充：如果自己解决不了科学上网问题，但是又需要用Vue开发工具那该怎么办？**</span><br><span class="line"></span><br><span class="line">&gt; 如果实在解决不了科学上网难题，Vue官方也提供了插件源码允许我们自己编译/构建Google Chrom插件，步骤如下（构建插件流程稍微麻烦一些&lt;**不要求掌握如何构建**&gt;）。</span><br><span class="line">&gt;</span><br><span class="line">&gt; ![Vue调试工具](https://storage.lynnn.cn/assets/markdown/91147/pictures/2020/08/6f094719844e04c1aa853b36c18b1e18c1ee6c2d.png?sign=55a5622a22b937b7b1b419ca67dafd6b&amp;t=5f38fa24)</span><br><span class="line"></span><br><span class="line">地址：https://github.com/vuejs/vue-devtools</span><br><span class="line"></span><br><span class="line">- 打开谷歌浏览器的扩展管理页面，开启开发者模式</span><br><span class="line">- 选择加载已解压的扩展程序，浏览选中shell-chrome文件夹</span><br><span class="line">- 安装好扩展后，点击`详细信息`，赋予扩展权限</span><br><span class="line">  - 允许访问文件网址</span><br><span class="line">  - 允许收集错误信息</span><br><span class="line">- 装好之后后续可以在使用了vue的页面中的检查工具处看到`vue`选项卡</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 5、基础模板语法</span><br><span class="line"></span><br><span class="line"> 5.1、插值表达式</span><br><span class="line"></span><br><span class="line">**插值表达式：**是vue框架提供的一种在HTML模板中绑定数据的方式，使用`&#123;&#123;变量名&#125;&#125;`方式绑定Vue实例中data中的数据变量，会将绑定的数据实时的在视图中显示出来。</span><br><span class="line"></span><br><span class="line">插值表达式的写法支持使用：</span><br><span class="line"></span><br><span class="line">- 变量名</span><br><span class="line">- **部分**JavaScript表达式</span><br><span class="line">  - 注：`&#123;&#123;  &#125;&#125;`括起来的区域，就是一个就是js语法区域，在里面可以写部份的js语法。不能写 var a = 10;分支语句;循环语句</span><br><span class="line">- 三元运算符</span><br><span class="line">- 方法调用</span><br><span class="line">- ...</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 直接展示插值 --&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;str&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;!-- 部分js表达式 --&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;age+1&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;age+&apos;1&apos;&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;!-- 三元运算符 --&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;age&gt;=18 ? &apos;进迪厅蹦迪了&apos; : &apos;回去写作业&apos;&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;!-- 方法调用 --&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;title.substr(0,8)&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &apos;#app&apos;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                str: &apos;hello world&apos;,</span><br><span class="line">                age: 19,</span><br><span class="line">                num: 38,</span><br><span class="line">                title: &apos;委员建议产假延长至3年到6年&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"> 5.2、指令</span><br><span class="line"></span><br><span class="line">官网对指令的说明：https://cn.vuejs.org/v2/api/#%E6%8C%87%E4%BB%A4</span><br><span class="line"></span><br><span class="line">问题1：指令是啥？</span><br><span class="line"></span><br><span class="line">- 都是以`v-`开头</span><br><span class="line">- 标签自定义属性</span><br><span class="line"></span><br><span class="line">问题2：指令有啥用？</span><br><span class="line"></span><br><span class="line">- 虽然是标签的属性，但是不是html自带的属性，是vue提供语法糖</span><br><span class="line">- 当表达式的值发生变化的时候，指令可以将连带产生的影响响应式的应用到页面上（自动化应用）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">入门级指令：v-text和v-html</span><br><span class="line"></span><br><span class="line">上述2个指令在原生js中都有原型：</span><br><span class="line"></span><br><span class="line">- v-text对应的是innerText</span><br><span class="line">- v-html对应的是innerHTML</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 常规插值，默认不解析html内容 --&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;link&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;!-- 解析html指令v-html（少用，存在被攻击的风险，xss攻击） --&gt;</span><br><span class="line">        &lt;div v-html=&apos;link&apos;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;!-- v-text --&gt;</span><br><span class="line">        &lt;div v-text=&apos;link&apos;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &apos;#app&apos;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                link: &quot;&lt;a href=&apos;http://www.qq.com&apos; target=&apos;_blank&apos;&gt;腾讯网&lt;/a&gt;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 二、常用指令</span><br><span class="line"></span><br><span class="line"> 1、v-bind</span><br><span class="line"></span><br><span class="line">**作用：**动态地绑定一个或多个`attribute`，允许我们把属性的值写成变量的形式</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;!-- v-bind：给非指令的属性使用变量 --&gt;</span><br><span class="line">&lt;a v-bind:href=&quot;url&quot; v-bind:target=&quot;target&quot;&gt;&#123;&#123;alt&#125;&#125;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- v-bind的简写形式，实际使用这样的写法（常用的偷懒写法） --&gt;</span><br><span class="line">&lt;a :href=&quot;url&quot; :target=&quot;target&quot;&gt;&#123;&#123;alt&#125;&#125;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">        &lt;a :href=&quot;url&quot; :target=&quot;type&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &apos;#app&apos;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                url: &quot;http://www.qq.com&quot;,</span><br><span class="line">                type: &quot;_blank&quot;,</span><br><span class="line">                title: &quot;百度一下&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> 2、v-on</span><br><span class="line"></span><br><span class="line">**作用：**事件绑定</span><br><span class="line"></span><br><span class="line">**语法：**事件类型与原生js的事件类型一模一样</span><br><span class="line"></span><br><span class="line">- v-on:事件类型=事件处理程序</span><br><span class="line">- @事件类型=事件处理程序</span><br><span class="line"></span><br><span class="line">**示例：**</span><br><span class="line"></span><br><span class="line">形式有三：</span><br><span class="line"></span><br><span class="line">- 业务比较简单，一行代码搞定可以直接写在属性值上</span><br><span class="line">- 业务复杂，一行搞不定，则这个时候需要定义事件处理程序函数（需要使用vue配置选项`methods`）【无参，直接写方法名即可】</span><br><span class="line">- 业务复杂，一行搞不定，则这个时候需要定义事件处理程序函数（需要使用vue配置选项`methods`）【有参，直接写方法名后再去写括号传参】</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;!-- 直接执行操作 --&gt;</span><br><span class="line">&lt;!-- 常规写法 --&gt;</span><br><span class="line">&lt;button v-on:click=&quot;num++&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;button @click=&quot;num++&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 事件处理函数调用：直接写函数名 --&gt;</span><br><span class="line">&lt;button @click=&quot;say&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;!-- 事件处理函数调用：常规调用 --&gt;</span><br><span class="line">&lt;button @click=&quot;say(&apos;sth&apos;)&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;!-- 事件处理函数调用：常规调用，传递事件对象 --&gt;</span><br><span class="line">&lt;button @click=&quot;say(&apos;sth&apos;,$event)&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">如果事件处理函数为自定义函数，则需要先进行定义，定义的方式如下：</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">...</span><br><span class="line">data: &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    functionName: function(arg1,arg2,arg3,...)&#123;</span><br><span class="line">        // something to do</span><br><span class="line">    &#125;,</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&gt; 注意：事件绑定`v-on`属性表达式中切记不能直接写业务逻辑，例如`@click=&quot;alert(&apos;123&apos;)&quot;`。换言之，在行内上是不允许使用内置函数的，必须要调用自己定义的函数，然后你可以在自定义的函数内使用内置函数。</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;!-- 事件处理程序的坑： 事件处理程序不能直接用js内置的方法，方法一定要在methods属性中要存在，即事件处理程序一定是自己定义的方法 --&gt;</span><br><span class="line">            &lt;button @click=&quot;jingxi(&apos;这是一个惊喜&apos;)&quot;&gt;</span><br><span class="line">                点我有惊喜</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">            &lt;button @click=&quot;jingxi2&quot;&gt;</span><br><span class="line">                点我有惊喜</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &quot;#app&quot;,</span><br><span class="line">            data: &#123;&#125;,</span><br><span class="line">            // 事件处理程序定义</span><br><span class="line">            methods: &#123;</span><br><span class="line">                jingxi: function (what) &#123;</span><br><span class="line">                    alert(what);</span><br><span class="line">                &#125;,</span><br><span class="line">                jingxi2: function () &#123;</span><br><span class="line">                    alert(&quot;马上下课了&quot;);</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">## 3、v-for</span><br><span class="line"></span><br><span class="line">**作用：**循环遍历数据</span><br><span class="line"></span><br><span class="line">**语法：**</span><br><span class="line"></span><br><span class="line">- v-for=&quot;(item,index) in arr&quot;</span><br><span class="line">  - item：当前循环到的元素</span><br><span class="line">  - index：当前循环到元素的索引</span><br><span class="line">- v-for=&quot;item in arr&quot;</span><br><span class="line">  - item：当前循环到的元素</span><br><span class="line"></span><br><span class="line">在循环遍历数据的时候官方建议我在循环体上增加属性key的绑定，key属性要求唯一，**其可以提高页面的渲染效率**。key值一般绑定当前数据的id值，如果实在没有，也可以考虑绑定索引（但是不推荐）</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&quot;(item,index) in arr&quot; :key=&quot;item.id&quot;&gt;&#123;&#123;index&#125;&#125;   &#123;&#123;item.id&#125;&#125;     &#123;&#123;item.hobby&#125;&#125;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&quot;item in arr&quot; :key=&quot;item.id&quot;&gt;&#123;&#123;item.id&#125;&#125;     &#123;&#123;item.hobby&#125;&#125;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &quot;#app&quot;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                arr: [</span><br><span class="line">                    &#123;id: 1, hobby: &apos;吃饭&apos;&#125;,</span><br><span class="line">                    &#123;id: 2, hobby: &apos;睡觉&apos;&#125;,</span><br><span class="line">                    &#123;id: 3, hobby: &apos;打豆豆&apos;&#125;,</span><br><span class="line">                    &#123;id: 4, hobby: &apos;打游戏&apos;&#125;,</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">## 4、v-if系列</span><br><span class="line"></span><br><span class="line">**作用：**分支判断，控制元素是否渲染（不渲染则元素不存在dom树上的）</span><br><span class="line"></span><br><span class="line">具体有：</span><br><span class="line"></span><br><span class="line">- v-if</span><br><span class="line">- v-else-if</span><br><span class="line">- v-else</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;!--</span><br><span class="line">    age:年龄</span><br><span class="line">    age&lt;18：少年</span><br><span class="line">    18&lt;=age&lt;25：青年</span><br><span class="line">    25&lt;=age&lt;35：中年</span><br><span class="line">    age&gt;=35：老年</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">## 5、v-show</span><br><span class="line"></span><br><span class="line">**作用：**分支判断，控制元素是否显示（是否显示元素，该元素都是存在的）</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- v-if系列 --&gt;</span><br><span class="line">        &lt;div v-if=&quot;age &lt; 18&quot;&gt;少年&lt;/div&gt;</span><br><span class="line">        &lt;div v-else-if=&quot;age &gt;= 18 &amp;&amp; age &lt; 25&quot;&gt;青年&lt;/div&gt;</span><br><span class="line">        &lt;div v-else-if=&quot;age &gt;= 25 &amp;&amp; age &lt; 35&quot;&gt;中年&lt;/div&gt;</span><br><span class="line">        &lt;div v-else&gt;老年&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- v-show --&gt;</span><br><span class="line">        &lt;div v-show=&quot;bool&quot;&gt;&#123;&#123;age&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &quot;#app&quot;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                age: 17,</span><br><span class="line">                bool: false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">## 6、v-model</span><br><span class="line"></span><br><span class="line">**作用：表单**数据的双向数据绑定（通俗讲，就是用v-model替换以前的value属性）</span><br><span class="line"></span><br><span class="line">示例代码：</span><br><span class="line"></span><br><span class="line">```vue</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 方向1：表单中（页面）的数据变了，会影响到data中的数据 --&gt;</span><br><span class="line">        &lt;div&gt;&lt;input type=&quot;text&quot; v-model=&quot;username&quot; /&gt;&lt;/div&gt;</span><br><span class="line">        &lt;!-- 方向2：当data里的数据变了，会影响到插值表达式显示（页面） --&gt;</span><br><span class="line">        &lt;div&gt;您输入的用户名是：&#123;&#123;username&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Vue(&#123;</span><br><span class="line">            el: &quot;#app&quot;,</span><br><span class="line">            data: &#123;</span><br><span class="line">                username: &quot;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/11111111111" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/11111111111" alt="微信"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="11111111111">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="/11111111111" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2021/03/09/2021-3-9/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">真菌分解木质纤维与枯枝落叶</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/12/15/20201221/">
+                <span class="level-item">公司内部会议管理系统(asp)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="小明与离谱">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        小明与离谱
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        USC
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>South China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        0
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/ppoffice">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/学科竞赛/" style="font-size: 15px;">学科竞赛</a> <a href="/tags/英文论文/" style="font-size: 10px;">英文论文</a> <a href="/tags/课程设计/" style="font-size: 10px;">课程设计</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2021/03/09/2021-3-9/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="真菌分解木质纤维与枯枝落叶">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-09T04:10:00.000Z">2021-03-09</time></div>
+                    <a href="/2021/03/09/2021-3-9/" class="has-link-black-ter is-size-6">真菌分解木质纤维与枯枝落叶</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/03/08/2021-3-8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Vue网页框架">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-08T15:55:00.000Z">2021-03-08</time></div>
+                    <a href="/2021/03/08/2021-3-8/" class="has-link-black-ter is-size-6">Vue网页框架</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/12/15/20201221/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="公司内部会议管理系统(asp)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-15T02:00:00.000Z">2020-12-15</time></div>
+                    <a href="/2020/12/15/20201221/" class="has-link-black-ter is-size-6">公司内部会议管理系统(asp)</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/25/2020-10 - 2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="全国大学生软件测试竞赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-25T02:00:00.000Z">2020-10-25</time></div>
+                    <a href="/2020/10/25/2020-10 - 2/" class="has-link-black-ter is-size-6">全国大学生软件测试竞赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/15/2020-10/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“蓝桥杯”程序设计竞赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-15T07:00:00.000Z">2020-10-15</time></div>
+                    <a href="/2020/10/15/2020-10/" class="has-link-black-ter is-size-6">“蓝桥杯”程序设计竞赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/学科竞赛/">
+                        <span class="tag">学科竞赛</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英文论文/">
+                        <span class="tag">英文论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/课程设计/">
+                        <span class="tag">课程设计</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2021/03/09/2021-3-9/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="真菌分解木质纤维与枯枝落叶">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-09T04:10:00.000Z">2021-03-09</time></div>
+                    <a href="/2021/03/09/2021-3-9/" class="has-link-black-ter is-size-6">真菌分解木质纤维与枯枝落叶</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2021/03/08/2021-3-8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Vue网页框架">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-03-08T15:55:00.000Z">2021-03-08</time></div>
+                    <a href="/2021/03/08/2021-3-8/" class="has-link-black-ter is-size-6">Vue网页框架</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/12/15/20201221/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="公司内部会议管理系统(asp)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-15T02:00:00.000Z">2020-12-15</time></div>
+                    <a href="/2020/12/15/20201221/" class="has-link-black-ter is-size-6">公司内部会议管理系统(asp)</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/25/2020-10 - 2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="全国大学生软件测试竞赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-25T02:00:00.000Z">2020-10-25</time></div>
+                    <a href="/2020/10/25/2020-10 - 2/" class="has-link-black-ter is-size-6">全国大学生软件测试竞赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/10/15/2020-10/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“蓝桥杯”程序设计竞赛">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-15T07:00:00.000Z">2020-10-15</time></div>
+                    <a href="/2020/10/15/2020-10/" class="has-link-black-ter is-size-6">“蓝桥杯”程序设计竞赛</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/学科竞赛/">
+                        <span class="tag">学科竞赛</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英文论文/">
+                        <span class="tag">英文论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/课程设计/">
+                        <span class="tag">课程设计</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Vue网页框架" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 TM&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
